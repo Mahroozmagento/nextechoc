@@ -31,7 +31,7 @@ export default async function handler(req, res) {
     
     // If you want email notifications, add your email service here
     // Example with Resend (free tier: 3000 emails/month):
-    // const resend = new Resend(process.env.RESEND_API_KEY);
+    // const resend = new Resend(process.env.SEND_API_KEY);
     // await resend.emails.send({
     //   from: 'noreply@nextechoc.com',
     //   to: 'hello@nextechoc.com',
