@@ -25,7 +25,7 @@ export default function Header() {
           <span>📍 Orange County, CA — Irvine · Anaheim · Newport Beach · Santa Ana · Tustin</span>
           <div>
             <span className="top-emergency">🚨 24/7 EMERGENCY</span>
-            <a href="tel:+17149000000">📞 (714) 900-0000</a>
+            <a href="tel:+194934502850000">📞 (714) 900-0000</a>
             <a href="mailto:hello@nextechoc.com">✉ hello@nextechoc.com</a>
           </div>
         </div>

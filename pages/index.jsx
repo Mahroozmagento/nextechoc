@@ -507,7 +507,7 @@ export default function Home() {
           <p style={{color:'rgba(255,255,255,.8)',fontSize:'16px',maxWidth:'520px',lineHeight:1.7}}>Book a free 30-minute IT assessment for your Orange County business. Zero obligation, zero pressure.</p>
           <div className="cta-acts">
             <a href="#contact" className="btn-ghost-wh" style={{fontSize:'15px',fontWeight:700,borderWidth:'2px'}}>🚀 Book Free Assessment</a>
-            <a href="tel:+17149000000" className="btn-blue">📞 Call (714) 900-0000</a>
+            <a href="tel:+194934502850000" className="btn-blue">📞 Call (714) 900-0000</a>
           </div>
         </div>
       </div>
