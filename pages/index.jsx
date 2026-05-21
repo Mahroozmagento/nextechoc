@@ -85,13 +85,13 @@ export default function Home() {
         setSubmitted(true);
       }
     } catch {
-      alert('Something went wrong. Please call us at (714) 900-0000.');
+      alert('Something went wrong. Please call us at (949) 345-0285.');
     }
     setSubmitting(false);
   };
 
   const faqs = [
-    { q: 'How fast do you respond to IT emergencies?', a: 'Business Pro clients have a guaranteed 1-hour on-site SLA for critical issues. Remote support response is typically under 15 minutes. For true emergencies, call (714) 900-0000 — we answer 24/7/365.' },
+    { q: 'How fast do you respond to IT emergencies?', a: 'Business Pro clients have a guaranteed 1-hour on-site SLA for critical issues. Remote support response is typically under 15 minutes. For true emergencies, call (949) 345-0285 — we answer 24/7/365.' },
     { q: 'Do you require long-term contracts?', a: 'Never. All our Managed IT plans are month-to-month. We earn your business every single month through results, not lock-in clauses. Cancel with 30 days notice, no penalties.' },
     { q: 'What cities in Orange County do you serve?', a: 'All of Orange County: Irvine, Anaheim, Santa Ana, Newport Beach, Tustin, Garden Grove, Orange, Costa Mesa, Fullerton, Huntington Beach, Mission Viejo, Lake Forest and more. On-site same day for most locations.' },
     { q: 'Can you replace our existing IT company?', a: 'Yes. We handle complete IT transitions including data migration, vendor handoffs, documentation and onboarding — typically with zero downtime. Our team does a full environment audit first.' },
@@ -398,7 +398,7 @@ export default function Home() {
               <h3 style={{fontFamily:'\'Barlow Semi Condensed\',sans-serif',fontWeight:700,fontSize:'22px',color:'var(--lttext)',marginBottom:'12px'}}>We&apos;re Local. We Answer.</h3>
               <p style={{color:'var(--ltmuted)',fontSize:'14.5px',lineHeight:1.78,marginBottom:'28px'}}>Based in Orange County — our engineers serve Irvine, Anaheim, Santa Ana, Newport Beach, Tustin, Garden Grove and every surrounding city.</p>
               {[
-                {icon:'📞',label:'(714) 900-0000',sub:'Mon–Fri 8am–6pm | Emergency 24/7'},
+                {icon:'📞',label:'(949) 345-0285',sub:'Mon–Fri 8am–6pm | Emergency 24/7'},
                 {icon:'✉',label:'hello@nextechoc.com',sub:'Response within 1 business hour'},
                 {icon:'📍',label:'Orange County, California',sub:'All OC cities — on-site same day'},
                 {icon:'🕐',label:'Business Hours',sub:'Mon–Fri: 8:00 AM – 6:00 PM PST | Emergency: 24/7/365'},
@@ -427,7 +427,7 @@ export default function Home() {
                   <div className="fsuc" style={{display:'block'}}>
                     <div className="fsuc-icon">✅</div>
                     <h3>Message Received!</h3>
-                    <p>A NexTech OC engineer will contact you within <strong>1 business hour</strong>.<br />For urgent issues, call <strong>(714) 900-0000</strong>.</p>
+                    <p>A NexTech OC engineer will contact you within <strong>1 business hour</strong>.<br />For urgent issues, call <strong>(949) 345-0285</strong>.</p>
                     <p style={{marginTop:'12px',fontFamily:'\'IBM Plex Mono\',monospace',fontSize:'11px',color:'var(--cyan)'}}>// TICKET #NXT-{ticketNum} CREATED</p>
                   </div>
                 ) : (
@@ -507,7 +507,7 @@ export default function Home() {
           <p style={{color:'rgba(255,255,255,.8)',fontSize:'16px',maxWidth:'520px',lineHeight:1.7}}>Book a free 30-minute IT assessment for your Orange County business. Zero obligation, zero pressure.</p>
           <div className="cta-acts">
             <a href="#contact" className="btn-ghost-wh" style={{fontSize:'15px',fontWeight:700,borderWidth:'2px'}}>🚀 Book Free Assessment</a>
-            <a href="tel:+194934502850000" className="btn-blue">📞 Call (714) 900-0000</a>
+            <a href="tel:+19493450285" className="btn-blue">📞 Call (949) 345-0285</a>
           </div>
         </div>
       </div>
@@ -534,10 +534,10 @@ function ChatWidget() {
     'managed it':'Our Managed IT plans:\n• Starter: $49/user/mo\n• Business Pro: $89/user/mo\n• Enterprise: Custom\nAll month-to-month, no contracts!',
     'pricing':'Managed IT: Starter $49/user/mo | Business Pro $89/user/mo | Enterprise custom. Other services are project-based.',
     'security camera':'📷 Yes! We install 4K/8K IP camera systems with AI analytics, license plate recognition and access control. Free site survey available!',
-    'emergency':'🚨 Call us NOW: (714) 900-0000 — available 24/7/365.',
+    'emergency':'🚨 Call us NOW: (949) 345-0285 — available 24/7/365.',
     'networking':'We handle Cat6/Cat6A cabling, enterprise Wi-Fi, VLAN, SD-WAN, VPN and server room buildouts.',
     'contract':'Zero contracts. All plans are month-to-month.',
-    'default':'Great question! Call us at (714) 900-0000 or fill out the contact form for a free 30-minute consultation. We respond within 1 business hour!'
+    'default':'Great question! Call us at (949) 345-0285 or fill out the contact form for a free 30-minute consultation. We respond within 1 business hour!'
   };
 
   const getReply = msg => {

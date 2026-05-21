@@ -197,7 +197,7 @@ export default function Blog() {
               <h4 style={{fontFamily:'\'Barlow Semi Condensed\',sans-serif',fontWeight:700,fontSize:'18px',color:'#fff',marginBottom:'8px'}}>Need IT Help Now?</h4>
               <p style={{color:'rgba(255,255,255,.75)',fontSize:'13px',lineHeight:1.7,marginBottom:'16px'}}>Free 30-min assessment for OC businesses. No obligation, no hard sell.</p>
               <Link href="/#contact" style={{display:'block',background:'#fff',color:'var(--r500)',borderRadius:'8px',padding:'10px',fontWeight:700,textDecoration:'none',fontSize:'14px'}}>⚡ Book Free Assessment</Link>
-              <div style={{marginTop:'10px',fontSize:'11px',color:'rgba(255,255,255,.6)',fontFamily:'\'IBM Plex Mono\',monospace'}}>or call (714) 900-0000</div>
+              <div style={{marginTop:'10px',fontSize:'11px',color:'rgba(255,255,255,.6)',fontFamily:'\'IBM Plex Mono\',monospace'}}>or call (949) 345-0285</div>
             </div>
           </aside>
         </div>

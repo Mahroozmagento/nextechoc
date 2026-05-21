@@ -369,7 +369,7 @@ export default function BlogPost({ post, recentPosts, relatedPosts, headings }) 
               <p>Get a free cybersecurity assessment for your OC business. We identify your top vulnerabilities at zero cost.</p>
               <Link href="/#contact">Book Free Assessment</Link>
               <div style={{ marginTop: '10px', fontSize: '11px', opacity: 0.65, fontFamily: 'monospace' }}>
-                or call (714) 900-0000
+                or call (949) 345-0285
               </div>
             </div>
 
