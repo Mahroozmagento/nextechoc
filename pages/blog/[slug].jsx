@@ -17,7 +17,8 @@ export async function getStaticProps({ params }) {
   const post = await client.fetch(`
     *[_type == "post" && slug.current == $slug][0] {
       title, slug, publishedAt, excerpt, category, body,
-      seoTitle, seoDescription
+      seoTitle, seoDescription,
+      "mainImage": mainImage{asset->}
     }
   `, { slug: params.slug })
 
@@ -199,23 +200,16 @@ export default function BlogPost({ post, recentPosts, relatedPosts, headings }) 
             </div>
 
             {/* HERO IMAGE PLACEHOLDER */}
-            <div
-              style={{
-                borderRadius: '14px', overflow: 'hidden', marginBottom: '36px',
-                background: '#E8EFF9', height: '320px',
-                display: 'flex', flexDirection: 'column',
-                alignItems: 'center', justifyContent: 'center',
-                border: '1.5px dashed rgba(46,143,255,.25)', gap: '8px',
-              }}
-            >
-              <div style={{ fontSize: '34px', opacity: 0.35 }}>&#128247;</div>
-              <div style={{ fontFamily: 'monospace', fontSize: '10px', color: '#1A6AC8', fontWeight: 700, letterSpacing: '1px' }}>
-                BLOG IMAGE
-              </div>
-              <div style={{ fontFamily: 'monospace', fontSize: '10px', color: '#4A5A72' }}>
-                860 x 320 px
-              </div>
-            </div>
+            <div style={{ borderRadius: '14px', overflow: 'hidden', marginBottom: '36px', background: '#E8EFF9', height: '320px' }}>
+  {post.mainImage?.asset?.url ? (
+    <img src={post.mainImage.asset.url} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+  ) : (
+    <div style={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', border: '1.5px dashed rgba(46,143,255,.25)', gap: '8px' }}>
+      <div style={{ fontSize: '34px', opacity: 0.35 }}>📷</div>
+      <div style={{ fontFamily: 'monospace', fontSize: '10px', color: '#1A6AC8', fontWeight: 700 }}>BLOG IMAGE</div>
+    </div>
+  )}
+</div>
 
             {/* ARTICLE BODY */}
             <div className="article-body">

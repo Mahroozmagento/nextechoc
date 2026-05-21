@@ -8,7 +8,8 @@ import Footer from '../components/Footer'
 export async function getStaticProps() {
   const posts = await client.fetch(`
     *[_type == "post"] | order(publishedAt desc) {
-      _id, title, slug, publishedAt, excerpt, category
+      _id, title, slug, publishedAt, excerpt, category,
+      "mainImage": mainImage{asset->}
     }
   `)
   return { props: { posts } }
@@ -99,10 +100,14 @@ export default function Blog({ posts }) {
             {/* FEATURED */}
             {featured && (
   <div className="featured-post">
-    <div className="fp-img" style={{ position: 'relative', height: '220px', background: '#E8EFF9', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <div className="fp-badge">⭐ FEATURED</div>
-      <span style={{ fontFamily: 'monospace', fontSize: '12px', color: '#4A5A72' }}>📷 BLOG IMAGE — 860 × 220 px</span>
-    </div>
+    <div className="fp-img" style={{ position: 'relative', height: '220px', background: '#E8EFF9', overflow: 'hidden' }}>
+  <div className="fp-badge">⭐ FEATURED</div>
+  {featured.mainImage?.asset?.url ? (
+    <img src={featured.mainImage.asset.url} alt={featured.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+  ) : (
+    <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'monospace', fontSize: '12px', color: '#4A5A72' }}>📷 BLOG IMAGE — 860 × 220 px</div>
+  )}
+</div>
     <div className="fp-body">
       <span className="fp-cat red">{featured.category || 'General'}</span>
       <Link href={`/blog/${featured.slug.current}`} className="fp-title">
@@ -131,9 +136,13 @@ export default function Blog({ posts }) {
               <div className="blog-grid">
                 {rest.map(post => (
                   <div key={post._id} className="blog-card">
-                    <div className="bc-img" style={{ height: '160px', background: '#E8EFF9', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <span style={{ fontFamily: 'monospace', fontSize: '12px', color: '#4A5A72' }}>BLOG IMAGE</span>
-                    </div>
+                    <div className="bc-img" style={{ height: '160px', background: '#E8EFF9', overflow: 'hidden' }}>
+  {post.mainImage?.asset?.url ? (
+    <img src={post.mainImage.asset.url} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+  ) : (
+    <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'monospace', fontSize: '12px', color: '#4A5A72' }}>BLOG IMAGE</div>
+  )}
+</div>
                     <div className="bc-body">
                       <span className="bc-cat red">{post.category || 'General'}</span>
                       <Link href={`/blog/${post.slug.current}`} className="bc-title">
