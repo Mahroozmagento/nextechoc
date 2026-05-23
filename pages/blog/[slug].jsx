@@ -18,19 +18,19 @@ export async function getStaticProps({ params }) {
     *[_type == "post" && slug.current == $slug][0] {
       title, slug, publishedAt, excerpt, category, body,
       seoTitle, seoDescription,
-      "mainImage": mainImage{asset->}
+      "mainImage": mainImage.asset->url
     }
   `, { slug: params.slug })
 
   const recentPosts = await client.fetch(`
     *[_type == "post" && slug.current != $slug] | order(publishedAt desc)[0..3] {
-      title, slug, publishedAt, category
+      title, slug, publishedAt, category, "mainImage": mainImage.asset->url
     }
   `, { slug: params.slug })
 
   const relatedPosts = await client.fetch(`
     *[_type == "post" && slug.current != $slug] | order(publishedAt desc)[0..2] {
-      title, slug, category, excerpt
+      title, slug, category, excerpt, "mainImage": mainImage.asset->url
     }
   `, { slug: params.slug })
 
@@ -201,8 +201,8 @@ export default function BlogPost({ post, recentPosts, relatedPosts, headings }) 
 
             {/* HERO IMAGE PLACEHOLDER */}
             <div style={{ borderRadius: '14px', overflow: 'hidden', marginBottom: '36px', background: '#E8EFF9', height: '320px' }}>
-  {post.mainImage?.asset?.url ? (
-    <img src={post.mainImage.asset.url} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+  {post.mainImage ? (
+    <img src={post.mainImage} alt={post.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
   ) : (
     <div style={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', border: '1.5px dashed rgba(46,143,255,.25)', gap: '8px' }}>
       <div style={{ fontSize: '34px', opacity: 0.35 }}>📷</div>
@@ -294,16 +294,15 @@ export default function BlogPost({ post, recentPosts, relatedPosts, headings }) 
                         borderRadius: '12px', overflow: 'hidden',
                       }}
                     >
-                      <div
-                        style={{
-                          height: '120px', background: '#E8EFF9',
-                          display: 'flex', alignItems: 'center',
-                          justifyContent: 'center', fontFamily: 'monospace',
-                          fontSize: '11px', color: '#4A5A72',
-                        }}
-                      >
-                        BLOG IMAGE
-                      </div>
+                      <div style={{ height: '120px', background: '#E8EFF9', overflow: 'hidden' }}>
+  {p.mainImage ? (
+    <img src={p.mainImage} alt={p.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+  ) : (
+    <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'monospace', fontSize: '11px', color: '#4A5A72' }}>
+      BLOG IMAGE
+    </div>
+  )}
+</div>
                       <div style={{ padding: '16px' }}>
                         <span
                           style={{
