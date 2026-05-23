@@ -35,9 +35,8 @@ export default function Header() {
       <nav className={scrolled ? 'scrolled' : ''}>
         <div className="nav-inner">
           <Link href="/" className="logo">
-            <div className="logo-mark">N</div>
-            Nex<em>Tech</em>&nbsp;OC
-          </Link>
+  <img src="/images/logo.png" alt="NexTech OC" height="45" style={{ display: 'block' }} />
+  </Link>
           <ul className="nav-links">
             <li><Link href="/#services">Services</Link></li>
             <li><Link href="/#process">Process</Link></li>
